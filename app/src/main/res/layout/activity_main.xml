@@ -199,6 +199,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/addMenuButton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/card_green">
@@ -241,6 +242,7 @@
         app:layout_constraintTop_toTopOf="@+id/cardView2">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/allItemMenu"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/card_green">
