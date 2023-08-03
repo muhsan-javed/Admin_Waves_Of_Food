@@ -22,12 +22,12 @@ class AllItemsActivity : AppCompatActivity() {
             listOf("Burger", "Sandwich", "momo", "Herbal Pancake", "Mixing", "Burger")
         val cartPrice = listOf("$10", "$8", "$15", "$99", "$50", "$12")
         val foodImages = listOf(
-            R.drawable.image,
-            R.drawable.image,
-            R.drawable.image,
-            R.drawable.image,
-            R.drawable.image,
-            R.drawable.image
+            R.drawable.photo,
+            R.drawable.photo,
+            R.drawable.photo,
+            R.drawable.photo,
+            R.drawable.photo,
+            R.drawable.photo
         )
 
         val adapter =

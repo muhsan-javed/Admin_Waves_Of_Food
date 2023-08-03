@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".ui.activities.LoginActivity">
 
     <TextView
@@ -46,12 +47,12 @@
         android:id="@+id/textViewLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/lato_bold"
         android:text="Login To Your \n Admin Dashboard"
+        android:textAlignment="center"
         android:textColor="@color/textColor"
         android:textSize="20sp"
-        android:layout_marginTop="16dp"
-        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="@+id/textViewLoginTitle"
         app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="@+id/textViewLoginTitle"
