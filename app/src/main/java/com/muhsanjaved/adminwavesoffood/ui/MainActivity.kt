@@ -1,4 +1,4 @@
-package com.muhsanjaved.adminwavesoffood
+package com.muhsanjaved.adminwavesoffood.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

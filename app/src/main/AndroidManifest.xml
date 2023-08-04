@@ -25,7 +25,7 @@
             android:name=".ui.activities.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="false" />
         <activity
             android:name=".ui.SplashScreenActivity"

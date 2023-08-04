@@ -4,8 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
-import com.muhsanjaved.adminwavesoffood.MainActivity
-import com.muhsanjaved.adminwavesoffood.R
+import com.muhsanjaved.adminwavesoffood.ui.MainActivity
 import com.muhsanjaved.adminwavesoffood.databinding.ActivitySignUpBinding
 
 class SignUpActivity : AppCompatActivity() {
