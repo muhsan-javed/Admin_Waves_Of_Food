@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.muhsanjaved.adminwavesoffood.databinding.ActivityMainBinding
 import com.muhsanjaved.adminwavesoffood.ui.activities.AddItemActivity
+import com.muhsanjaved.adminwavesoffood.ui.activities.AdminProfileActivity
 import com.muhsanjaved.adminwavesoffood.ui.activities.AllItemsActivity
 import com.muhsanjaved.adminwavesoffood.ui.activities.OutForDeliveryActivity
 
@@ -28,6 +29,11 @@ class MainActivity : AppCompatActivity() {
         }
         binding.outForDeliveryButton.setOnClickListener {
             val intent = Intent(this,OutForDeliveryActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.adminProfile.setOnClickListener {
+            val intent = Intent(this,AdminProfileActivity::class.java)
             startActivity(intent)
         }
 

@@ -276,7 +276,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView3"
+        android:id="@+id/adminProfile"
         android:layout_width="150dp"
         android:layout_height="100dp"
         android:layout_marginTop="16dp"
@@ -317,6 +317,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/logOutButton"
         android:layout_width="150dp"
         android:layout_height="100dp"
         android:outlineSpotShadowColor="@color/textColor"
@@ -363,8 +364,8 @@
         android:layout_marginTop="16dp"
         android:outlineSpotShadowColor="@color/textColor"
         app:cardCornerRadius="15dp"
-        app:layout_constraintStart_toStartOf="@+id/cardView3"
-        app:layout_constraintTop_toBottomOf="@+id/cardView3">
+        app:layout_constraintStart_toStartOf="@+id/adminProfile"
+        app:layout_constraintTop_toBottomOf="@+id/adminProfile">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -398,14 +399,15 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/createNewUser"
         android:layout_width="150dp"
         android:layout_height="100dp"
         android:outlineSpotShadowColor="@color/textColor"
         app:cardCornerRadius="15dp"
-        app:layout_constraintBottom_toBottomOf="@+id/cardView3"
+        app:layout_constraintBottom_toBottomOf="@+id/adminProfile"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/cardView3"
-        app:layout_constraintTop_toTopOf="@+id/cardView3">
+        app:layout_constraintStart_toEndOf="@+id/adminProfile"
+        app:layout_constraintTop_toTopOf="@+id/adminProfile">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
