@@ -13,6 +13,12 @@
         android:theme="@style/Theme.AdminWavesOfFood"
         tools:targetApi="31">
         <activity
+            android:name=".ui.activities.PendingOrdersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activities.CreateNewUserActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activities.AdminProfileActivity"
             android:exported="false" />
         <activity

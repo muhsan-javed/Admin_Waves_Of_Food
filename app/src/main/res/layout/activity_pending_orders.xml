@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activities.OutForDeliveryActivity">
+    tools:context=".ui.activities.PendingOrdersActivity">
 
     <ImageView
-        android:id="@+id/GoBackTO_Button"
+        android:id="@+id/adminBackButton"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_marginStart="8dp"
@@ -17,17 +17,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView21"
+        android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/yeon_sung_regular"
-        android:text="Out For Delivery"
+        android:text="Pending Orders"
         android:textColor="@color/black"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/GoBackTO_Button" />
-
+        app:layout_constraintTop_toBottomOf="@+id/adminBackButton" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/outForDeliveryRecyclerView"
@@ -37,6 +36,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView21"
-        tools:listitem="@layout/item_delivery" />
+        app:layout_constraintTop_toBottomOf="@+id/textView20"
+        tools:listitem="@layout/item_pending_order" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

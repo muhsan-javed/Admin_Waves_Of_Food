@@ -3,10 +3,12 @@ package com.muhsanjaved.adminwavesoffood.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.muhsanjaved.adminwavesoffood.databinding.ActivityMainBinding
 import com.muhsanjaved.adminwavesoffood.ui.activities.AddItemActivity
 import com.muhsanjaved.adminwavesoffood.ui.activities.AdminProfileActivity
 import com.muhsanjaved.adminwavesoffood.ui.activities.AllItemsActivity
+import com.muhsanjaved.adminwavesoffood.ui.activities.CreateNewUserActivity
 import com.muhsanjaved.adminwavesoffood.ui.activities.OutForDeliveryActivity
 
 class MainActivity : AppCompatActivity() {
@@ -35,6 +37,15 @@ class MainActivity : AppCompatActivity() {
         binding.adminProfile.setOnClickListener {
             val intent = Intent(this,AdminProfileActivity::class.java)
             startActivity(intent)
+        }
+
+        binding.createNewUser.setOnClickListener {
+            val intent = Intent(this,CreateNewUserActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.logOutButton.setOnClickListener {
+            Toast.makeText(this,"Your Are LoyOut", Toast.LENGTH_SHORT).show()
         }
 
     }
