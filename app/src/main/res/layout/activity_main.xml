@@ -82,7 +82,7 @@
                 app:srcCompat="@drawable/attantion" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/pendingOrderTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -104,9 +104,9 @@
                 android:fontFamily="@font/lato_bold"
                 android:text="$50"
                 android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="@+id/textView6"
+                app:layout_constraintEnd_toEndOf="@+id/pendingOrderTextView"
                 app:layout_constraintStart_toStartOf="@+id/guideline3"
-                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+                app:layout_constraintTop_toBottomOf="@+id/pendingOrderTextView" />
 
             <ImageView
                 android:id="@+id/imageView4"

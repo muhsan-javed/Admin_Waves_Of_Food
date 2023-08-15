@@ -10,6 +10,7 @@ import com.muhsanjaved.adminwavesoffood.ui.activities.AdminProfileActivity
 import com.muhsanjaved.adminwavesoffood.ui.activities.AllItemsActivity
 import com.muhsanjaved.adminwavesoffood.ui.activities.CreateNewUserActivity
 import com.muhsanjaved.adminwavesoffood.ui.activities.OutForDeliveryActivity
+import com.muhsanjaved.adminwavesoffood.ui.activities.PendingOrdersActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -43,6 +44,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this,CreateNewUserActivity::class.java)
             startActivity(intent)
         }
+         binding.pendingOrderTextView.setOnClickListener {
+                    val intent = Intent(this,PendingOrdersActivity::class.java)
+                    startActivity(intent)
+                }
 
         binding.logOutButton.setOnClickListener {
             Toast.makeText(this,"Your Are LoyOut", Toast.LENGTH_SHORT).show()

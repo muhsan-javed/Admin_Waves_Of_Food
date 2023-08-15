@@ -34,7 +34,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="Customer Name"
-                android:textSize="16sp"
+                android:textSize="20sp"
                 android:fontFamily="@font/yeon_sung_regular"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -43,13 +43,13 @@
                 android:id="@+id/itemDeliveryPaymentTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Payment"
-                android:textSize="16sp"
-                android:textColor="#B3B3B3"
-                android:layout_marginTop="5dp"
+                android:layout_marginStart="8dp"
                 android:fontFamily="@font/lato_regular"
+                android:text="Payment"
+                android:textColor="#B3B3B3"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="@+id/itemDeliveryCustomerNameTextView"
-                app:layout_constraintHorizontal_bias="0.145"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/itemDeliveryCustomerNameTextView" />
 

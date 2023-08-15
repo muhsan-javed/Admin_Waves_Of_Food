@@ -7,7 +7,7 @@
     tools:context=".ui.activities.PendingOrdersActivity">
 
     <ImageView
-        android:id="@+id/adminBackButton"
+        android:id="@+id/pendingOrderBackButton"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_marginStart="8dp"
@@ -29,7 +29,7 @@
         app:layout_constraintTop_toBottomOf="@+id/adminBackButton" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/outForDeliveryRecyclerView"
+        android:id="@+id/pendingOrderRecyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
