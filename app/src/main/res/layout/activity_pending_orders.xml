@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".ui.activities.PendingOrdersActivity">
 
     <ImageView
@@ -26,7 +27,7 @@
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/adminBackButton" />
+        app:layout_constraintTop_toBottomOf="@+id/pendingOrderBackButton" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/pendingOrderRecyclerView"

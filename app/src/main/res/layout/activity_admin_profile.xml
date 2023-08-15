@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".ui.activities.AdminProfileActivity">
 
     <ImageView
@@ -32,8 +33,8 @@
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/yeon_sung_regular"
         android:text="Edit your Profile"
         android:textColor="@color/textColor"
@@ -44,14 +45,14 @@
         android:id="@+id/editProfileButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="8dp"
-        android:fontFamily="@font/yeon_sung_regular"
-        android:text="Edit your Profile"
-        android:drawableStart="@drawable/edit"
-        android:textColor="@color/textColor"
-        android:gravity="center"
         android:clickable="true"
+        android:drawableStart="@drawable/edit"
+        android:fontFamily="@font/yeon_sung_regular"
+        android:gravity="center"
+        android:text="Edit your Profile"
+        android:textColor="@color/textColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView16" />
 
