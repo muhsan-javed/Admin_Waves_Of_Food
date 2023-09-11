@@ -4,15 +4,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.os.bundleOf
-import com.muhsanjaved.adminwavesoffood.R
 import com.muhsanjaved.adminwavesoffood.databinding.ActivityAddItemBinding
 
 class AddItemActivity : AppCompatActivity() {
 
-    private val binding : ActivityAddItemBinding by lazy {
+    private val binding: ActivityAddItemBinding by lazy {
         ActivityAddItemBinding.inflate(layoutInflater)
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -26,8 +25,8 @@ class AddItemActivity : AppCompatActivity() {
 
     }
 
-    val pickImage = registerForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri->
-        if (uri != null){
+    private val pickImage = registerForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri ->
+        if (uri != null) {
             binding.selectedImageView.setImageURI(uri)
         }
     }

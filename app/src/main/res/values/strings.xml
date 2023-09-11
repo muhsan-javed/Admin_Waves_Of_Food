@@ -2,4 +2,17 @@
     <string name="app_name">Admin Waves Of Food</string>
     <string name="waves_of_food">Waves Of Food</string>
     <string name="add_item">Add Item</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="full_name">Full-Name</string>
+    <string name="create_new_user">Create New User</string>
+    <string name="create_new_user_admin">Create New User Admin</string>
+    <string name="image_description">image_description</string>
+    <string name="login_to_your_n_admin_dashboard">Login To Your \n Admin Dashboard</string>
+    <string name="or">Or</string>
+    <string name="continue_with">Continue With</string>
+    <string name="facebook">Facebook</string>
+    <string name="google">Google</string>
+    <string name="login">Login</string>
+    <string name="don_t_have_account">Don’t Have Account?</string>
 </resources>

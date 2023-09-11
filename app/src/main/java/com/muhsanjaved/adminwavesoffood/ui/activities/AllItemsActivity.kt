@@ -8,9 +8,11 @@ import com.muhsanjaved.adminwavesoffood.adapters.AddItemAdapter
 import com.muhsanjaved.adminwavesoffood.databinding.ActivityAllItemsBinding
 
 class AllItemsActivity : AppCompatActivity() {
-    private val binding : ActivityAllItemsBinding by lazy {
+
+    private val binding: ActivityAllItemsBinding by lazy {
         ActivityAllItemsBinding.inflate(layoutInflater)
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)

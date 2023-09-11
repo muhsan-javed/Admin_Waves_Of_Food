@@ -2,12 +2,11 @@ package com.muhsanjaved.adminwavesoffood.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.muhsanjaved.adminwavesoffood.R
 import com.muhsanjaved.adminwavesoffood.databinding.ActivityAdminProfileBinding
 
 class AdminProfileActivity : AppCompatActivity() {
 
-    private val binding : ActivityAdminProfileBinding by lazy {
+    private val binding: ActivityAdminProfileBinding by lazy {
         ActivityAdminProfileBinding.inflate(layoutInflater)
     }
 
@@ -27,14 +26,14 @@ class AdminProfileActivity : AppCompatActivity() {
 
         var isEnable = false
         binding.editProfileButton.setOnClickListener {
-            isEnable = ! isEnable
+            isEnable = !isEnable
             binding.adminName.isEnabled = isEnable
             binding.adminAddress.isEnabled = isEnable
             binding.adminEmail.isEnabled = isEnable
             binding.adminPhoneNumber.isEnabled = isEnable
             binding.adminPassword.isEnabled = isEnable
 
-            if (isEnable){
+            if (isEnable) {
                 binding.adminName.requestFocus()
             }
         }

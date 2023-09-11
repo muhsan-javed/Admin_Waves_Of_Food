@@ -9,7 +9,7 @@ import com.muhsanjaved.adminwavesoffood.databinding.ActivityOutForDeliveryBindin
 
 class OutForDeliveryActivity : AppCompatActivity() {
 
-    private val binding : ActivityOutForDeliveryBinding by lazy {
+    private val binding: ActivityOutForDeliveryBinding by lazy {
         ActivityOutForDeliveryBinding.inflate(layoutInflater)
     }
 
@@ -31,7 +31,7 @@ class OutForDeliveryActivity : AppCompatActivity() {
             "Not Received",
             "Pending"
         )
-        val adapter = DeliveryAdapter(customerName,moneyStatus)
+        val adapter = DeliveryAdapter(customerName, moneyStatus)
         binding.outForDeliveryRecyclerView.adapter = adapter
         binding.outForDeliveryRecyclerView.layoutManager = LinearLayoutManager(this)
     }
