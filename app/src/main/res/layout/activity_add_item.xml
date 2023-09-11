@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -27,6 +26,7 @@
                 android:layout_height="24dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
+                android:contentDescription="@string/image_description"
                 android:src="@drawable/back"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -53,13 +53,15 @@
                 android:background="@drawable/edit_text_shape"
                 android:elevation="5dp"
                 android:fontFamily="@font/lato_regular"
-                android:hint="Food Name"
+                android:hint="@string/food_name"
                 android:inputType="text"
                 android:outlineSpotShadowColor="@color/textColor"
-                android:paddingLeft="15dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView16" />
+                app:layout_constraintTop_toBottomOf="@id/textView16"
+                android:autofillHints="name" />
 
             <EditText
                 android:id="@+id/edittext_FoodPrice"
@@ -71,14 +73,16 @@
                 android:background="@drawable/edit_text_shape"
                 android:elevation="5dp"
                 android:fontFamily="@font/lato_regular"
-                android:hint="Food Price"
+                android:hint="@string/food_price"
                 android:inputType="number"
                 android:outlineSpotShadowColor="@color/textColor"
-                android:paddingLeft="15dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText_FoodName" />
+                app:layout_constraintTop_toBottomOf="@+id/editText_FoodName"
+                android:autofillHints="phone" />
 
             <TextView
                 android:id="@+id/selectImage"
@@ -86,16 +90,16 @@
                 android:layout_height="57dp"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/edit_text_shape"
-                android:drawableRight="@drawable/add"
                 android:fontFamily="@font/yeon_sung_regular"
                 android:gravity="center_vertical"
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp"
-                android:text="Select Image"
+                android:text="@string/select_image"
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="@+id/edittext_FoodPrice"
                 app:layout_constraintStart_toStartOf="@+id/edittext_FoodPrice"
-                app:layout_constraintTop_toBottomOf="@+id/edittext_FoodPrice" />
+                app:layout_constraintTop_toBottomOf="@+id/edittext_FoodPrice"
+                app:drawableEndCompat="@drawable/add" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView6"
@@ -112,7 +116,8 @@
                     android:layout_width="175dp"
                     android:layout_height="110dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/photo" />
+                    android:src="@drawable/photo"
+                    android:contentDescription="@string/image_description" />
 
             </androidx.cardview.widget.CardView>
 
@@ -125,8 +130,9 @@
                 android:background="@drawable/edit_text_shape"
                 android:fontFamily="@font/yeon_sung_regular"
                 android:gravity="center_vertical"
-                android:paddingStart="15dp"
-                android:text="Short Description"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="@string/short_description"
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/selectImage"
@@ -139,15 +145,13 @@
                 android:layout_marginTop="8dp"
                 android:background="@color/white"
                 android:fontFamily="@font/lato_regular"
-                android:text="Lorem ipsum dolor sit amet,
-consectetur adipiscing elit,
-sed do eiusmod tempor incididunt
-ut labore et dolore magna aliqua. Ut enim ad "
+                android:text="@string/lorem_ipsum_text"
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="@+id/textView17"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/textView17"
-                app:layout_constraintTop_toBottomOf="@+id/textView17" />
+                app:layout_constraintTop_toBottomOf="@+id/textView17"
+                android:autofillHints="name" />
 
             <TextView
                 android:id="@+id/textView18"
@@ -159,8 +163,9 @@ ut labore et dolore magna aliqua. Ut enim ad "
                 android:background="@drawable/edit_text_shape"
                 android:fontFamily="@font/yeon_sung_regular"
                 android:gravity="center_vertical"
-                android:paddingStart="15dp"
-                android:text="Ingredients"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="@string/ingredients"
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -173,11 +178,13 @@ ut labore et dolore magna aliqua. Ut enim ad "
                 android:layout_marginTop="8dp"
                 android:background="@color/white"
                 android:fontFamily="@font/lato_regular"
-                android:text="Noddle \n Salad \n Burger \n Herbal Pan Cake \n Momos "
+                android:text="@string/noddle"
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="@+id/textView18"
                 app:layout_constraintStart_toStartOf="@+id/textView18"
-                app:layout_constraintTop_toBottomOf="@+id/textView18" />
+                app:layout_constraintTop_toBottomOf="@+id/textView18"
+                android:autofillHints="name"
+                />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/addItemButton"
@@ -187,7 +194,7 @@ ut labore et dolore magna aliqua. Ut enim ad "
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/green_button_gradient"
                 android:fontFamily="@font/yeon_sung_regular"
-                android:text="Add Item"
+                android:text="@string/add_item"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"

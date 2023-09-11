@@ -40,8 +40,10 @@
                     android:id="@+id/itemPendingOrderImageView"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
+                    android:contentDescription="@string/image_description"
                     android:scaleType="centerCrop"
                     tools:srcCompat="@tools:sample/avatars" />
+
             </androidx.cardview.widget.CardView>
 
 
@@ -52,7 +54,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/yeon_sung_regular"
-                android:text="Customer Name"
+                android:text="@string/customer_name"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 app:layout_constraintStart_toEndOf="@+id/itemCardViewIMG"
@@ -65,9 +67,9 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/yeon_sung_regular"
-                android:text="Quantity"
+                android:text="@string/quantity"
                 android:textColor="@color/black"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="@+id/itemPendingOrderCustomerName"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/itemCardViewIMG"
@@ -79,7 +81,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:fontFamily="@font/lato_regular"
-                android:text="2"
+                android:text="@string/two"
                 android:textColor="@color/textColor"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="@+id/textView22"
@@ -93,10 +95,10 @@
                 android:layout_marginEnd="8dp"
                 android:background="@drawable/green_button_gradient"
                 android:fontFamily="@font/yeon_sung_regular"
-                android:text="Accept"
+                android:text="@string/accept"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="16dp"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

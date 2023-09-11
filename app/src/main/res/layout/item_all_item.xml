@@ -40,8 +40,10 @@
                     android:id="@+id/itemImageView"
                     android:layout_width="64dp"
                     android:layout_height="64dp"
+                    android:contentDescription="@string/image_description"
                     android:scaleType="centerCrop"
                     tools:srcCompat="@tools:sample/avatars" />
+
             </androidx.cardview.widget.CardView>
 
 
@@ -51,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:fontFamily="@font/yeon_sung_regular"
-                android:text="Cart Food Name"
+                android:text="@string/cart_food_name"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@+id/itemPriceTextView"
                 app:layout_constraintStart_toEndOf="@+id/itemCardViewIMG"
@@ -63,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:fontFamily="@font/lato_regular"
-                android:text="Price"
+                android:text="@string/price"
                 android:textColor="@color/textColor"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/itemCardViewIMG"
@@ -87,7 +89,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:fontFamily="@font/lato_bold"
-                android:text="1"
+                android:text="@string/two"
                 app:layout_constraintBottom_toBottomOf="@+id/plusImageButton"
                 app:layout_constraintEnd_toStartOf="@+id/plusImageButton"
                 app:layout_constraintTop_toTopOf="@+id/plusImageButton" />

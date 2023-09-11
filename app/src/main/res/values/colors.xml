@@ -9,4 +9,6 @@
     <color name="endColor">#15BE77</color>
 
     <color name="iconColor">#FEAD1D</color>
+    <color name="not_received_color">#FF3b3b</color>
+    <color name="constraint_layout_color">#f4f4f4</color>
 </resources>

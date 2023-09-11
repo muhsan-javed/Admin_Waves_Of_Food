@@ -8,25 +8,11 @@
     tools:context=".ui.activities.SignUpActivity">
 
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:fontFamily="@font/yeon_sung_regular"
-        android:text=" Design By \n NeatRoots"
-        android:textAlignment="center"
-        android:textColor="@color/textColor"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
         android:id="@+id/textViewAlreadyHaveAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Already Have An Account?"
+        android:text="@string/already_have_an_account"
         android:textColor="@color/textColor"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/signUpButton"
@@ -46,13 +32,15 @@
         android:elevation="5dp"
         android:ems="10"
         android:fontFamily="@font/lato_regular"
-        android:hint="Name"
+        android:hint="@string/full_name"
         android:inputType="textPersonName"
-        android:paddingStart="15dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
         android:singleLine="true"
         app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
         app:layout_constraintStart_toStartOf="@+id/textInputLayout"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+        android:autofillHints="name" />
 
     <EditText
         android:id="@+id/editTextSignUpNameOfRestaurant"
@@ -67,13 +55,15 @@
         android:elevation="5dp"
         android:ems="10"
         android:fontFamily="@font/lato_regular"
-        android:hint="Name Of Restaurant"
+        android:hint="@string/name_of_restaurant"
         android:inputType="textPersonName"
-        android:paddingStart="15dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
         android:singleLine="true"
         app:layout_constraintEnd_toEndOf="@+id/editTextSignUpTextName"
         app:layout_constraintStart_toStartOf="@+id/editTextSignUpTextName"
-        app:layout_constraintTop_toBottomOf="@+id/editTextSignUpTextName" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextSignUpTextName"
+        android:autofillHints="name" />
 
     <EditText
         android:id="@+id/editTextSignUpTextEmailAddress"
@@ -88,12 +78,14 @@
         android:elevation="5dp"
         android:ems="10"
         android:fontFamily="@font/lato_regular"
-        android:hint="Email"
+        android:hint="@string/email"
         android:inputType="textEmailAddress"
-        android:paddingStart="15dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
         app:layout_constraintEnd_toEndOf="@+id/editTextSignUpNameOfRestaurant"
         app:layout_constraintStart_toStartOf="@+id/editTextSignUpNameOfRestaurant"
-        app:layout_constraintTop_toBottomOf="@+id/editTextSignUpNameOfRestaurant" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextSignUpNameOfRestaurant"
+        android:autofillHints="emailAddress" />
 
     <EditText
         android:id="@+id/editTextSignUpTextPassword"
@@ -108,13 +100,15 @@
         android:elevation="5dp"
         android:ems="10"
         android:fontFamily="@font/lato_regular"
-        android:hint="Password"
+        android:hint="@string/password"
         android:inputType="textPassword"
-        android:paddingStart="15dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
         android:singleLine="true"
         app:layout_constraintEnd_toEndOf="@+id/editTextSignUpTextEmailAddress"
         app:layout_constraintStart_toStartOf="@+id/editTextSignUpTextEmailAddress"
-        app:layout_constraintTop_toBottomOf="@+id/editTextSignUpTextEmailAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextSignUpTextEmailAddress"
+        android:autofillHints="password" />
 
     <TextView
         android:id="@+id/textViewSignUPMessage"
@@ -123,7 +117,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/yeon_sung_regular"
-        android:text="Choose Your Location "
+        android:text="@string/choose_your_location"
         android:textColor="@color/textColor"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -154,7 +148,7 @@
             android:layout_height="match_parent"
             android:fontFamily="@font/lato_regular"
             android:inputType="none"
-            android:text="karachi" />
+            android:text="@string/karachi" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -174,7 +168,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/lato_bold"
-        android:text="Sign Up Here For Your \n Admin Dashboard"
+        android:text="@string/sign_up_here_for_your_n_admin_dashboard"
         android:textAlignment="center"
         android:textColor="@color/textColor"
         android:textSize="20sp"
@@ -190,7 +184,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logo"
+        android:contentDescription="@string/image_description" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/signUpButton"
@@ -199,7 +194,7 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/green_button_gradient"
         android:fontFamily="@font/yeon_sung_regular"
-        android:text="Create Account"
+        android:text="@string/create_account"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="20sp"
