@@ -11,20 +11,21 @@ class AddItemAdapter(
     private val MenuItemImage: ArrayList<Int>,
 ) : RecyclerView.Adapter<AddItemAdapter.AllItemViewHolder>() {
 
-    private val itemQuantities = IntArray(MenuItemName.size){1}
+    private val itemQuantities = IntArray(MenuItemName.size) { 1 }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AllItemViewHolder {
-        val binding = ItemAllItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val binding = ItemAllItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return AllItemViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: AllItemViewHolder, position: Int) {
-       holder.bind(position)
+        holder.bind(position)
     }
 
     override fun getItemCount(): Int = MenuItemName.size
 
-    inner class AllItemViewHolder(private val binding: ItemAllItemBinding): RecyclerView.ViewHolder(binding.root) {
+    inner class AllItemViewHolder(private val binding: ItemAllItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(position: Int) {
             binding.apply {
                 val quantity = itemQuantities[position]
@@ -51,7 +52,7 @@ class AddItemAdapter(
         }
 
         private fun increaseQuantity(position: Int) {
-            if (itemQuantities[position]<10) {
+            if (itemQuantities[position] < 10) {
                 itemQuantities[position]++
                 binding.quantityTextView.text = itemQuantities[position].toString()
             }

@@ -9,13 +9,14 @@ import com.muhsanjaved.adminwavesoffood.databinding.ItemPendingOrderBinding
 
 class PendingOrderAdapter(
     private val customerNames: ArrayList<String>,
-    private val quantity:ArrayList<String>,
-    private val foodImages:ArrayList<Int>,
+    private val quantity: ArrayList<String>,
+    private val foodImages: ArrayList<Int>,
     private val context: Context
 ) : RecyclerView.Adapter<PendingOrderAdapter.PendingOrderViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PendingOrderViewHolder {
-        val binding = ItemPendingOrderBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val binding =
+            ItemPendingOrderBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return PendingOrderViewHolder(binding)
     }
 
@@ -25,7 +26,8 @@ class PendingOrderAdapter(
 
     override fun getItemCount(): Int = customerNames.size
 
-    inner class PendingOrderViewHolder(private val binding:ItemPendingOrderBinding):RecyclerView.ViewHolder(binding.root) {
+    inner class PendingOrderViewHolder(private val binding: ItemPendingOrderBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         private var isAccepted = false
         fun bind(position: Int) {
             binding.itemPendingOrderCustomerName.text = customerNames[position]
@@ -33,18 +35,18 @@ class PendingOrderAdapter(
             binding.itemPendingOrderImageView.setImageResource(foodImages[position])
 
             binding.itemPendingOrderAcceptButton.apply {
-                if (!isAccepted){
+                if (!isAccepted) {
                     text = "Accept"
-                }else{
+                } else {
                     text = "Dispatch"
                 }
                 setOnClickListener {
-                    if (!isAccepted){
+                    if (!isAccepted) {
                         text = "Dispatch"
                         isAccepted = true
                         showToast("Order is Accepted")
-                    }else{
-                    customerNames.removeAt(adapterPosition)
+                    } else {
+                        customerNames.removeAt(adapterPosition)
                         notifyItemChanged(adapterPosition)
                         showToast("Order Is Dispatched")
                     }
@@ -53,8 +55,8 @@ class PendingOrderAdapter(
 
         }
 
-        private fun showToast(message:String){
-            Toast.makeText(context, message,Toast.LENGTH_SHORT).show()
+        private fun showToast(message: String) {
+            Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
         }
     }
 }

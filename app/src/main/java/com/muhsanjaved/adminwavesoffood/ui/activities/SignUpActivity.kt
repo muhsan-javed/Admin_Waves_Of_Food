@@ -9,14 +9,16 @@ import com.muhsanjaved.adminwavesoffood.databinding.ActivitySignUpBinding
 
 class SignUpActivity : AppCompatActivity() {
 
-    private val binding : ActivitySignUpBinding by lazy {
+    private val binding: ActivitySignUpBinding by lazy {
         ActivitySignUpBinding.inflate(layoutInflater)
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        val locationList = arrayOf("Qambar", "Larkana", "Brohi Mohalla", "Ali Khan Kamber","karachi","Lahore")
+        val locationList =
+            arrayOf("Qambar", "Larkana", "Brohi Mohalla", "Ali Khan Kamber", "karachi", "Lahore")
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, locationList)
         val autoCompleteTextView = binding.listOfLocation
         autoCompleteTextView.setAdapter(adapter)

@@ -13,7 +13,8 @@ class DeliveryAdapter(
 ) : RecyclerView.Adapter<DeliveryAdapter.DeliveryViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DeliveryViewHolder {
-        val binding = ItemDeliveryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            ItemDeliveryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return DeliveryViewHolder(binding)
     }
 
@@ -23,7 +24,8 @@ class DeliveryAdapter(
         holder.bind(position)
     }
 
-    inner class DeliveryViewHolder(private val binding: ItemDeliveryBinding) : RecyclerView.ViewHolder(binding.root){
+    inner class DeliveryViewHolder(private val binding: ItemDeliveryBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(position: Int) {
             binding.itemDeliveryCustomerNameTextView.text = customerNames[position]
 
@@ -32,9 +34,12 @@ class DeliveryAdapter(
             val colorMap = mapOf(
                 "Received" to Color.GREEN, "Not Received" to Color.RED, "Pending" to Color.GRAY
             )
-            binding.itemDeliveryStatusMoneyNotReceivedTextView.setTextColor(colorMap[moneyStatus[position]]?: Color.BLACK)
+            binding.itemDeliveryStatusMoneyNotReceivedTextView.setTextColor(
+                colorMap[moneyStatus[position]] ?: Color.BLACK
+            )
             // Status Color
-            binding.itemDeliveryStatus.backgroundTintList  = ColorStateList.valueOf(colorMap[moneyStatus[position]]?: Color.BLACK)
+            binding.itemDeliveryStatus.backgroundTintList =
+                ColorStateList.valueOf(colorMap[moneyStatus[position]] ?: Color.BLACK)
 
 
         }

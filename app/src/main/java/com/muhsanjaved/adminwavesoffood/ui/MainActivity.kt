@@ -14,7 +14,7 @@ import com.muhsanjaved.adminwavesoffood.ui.activities.PendingOrdersActivity
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding :ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,34 +23,34 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.addMenuButton.setOnClickListener {
-            val intent = Intent(this,AddItemActivity::class.java)
+            val intent = Intent(this, AddItemActivity::class.java)
             startActivity(intent)
         }
         binding.allItemMenu.setOnClickListener {
-            val intent = Intent(this,AllItemsActivity::class.java)
+            val intent = Intent(this, AllItemsActivity::class.java)
             startActivity(intent)
         }
         binding.outForDeliveryButton.setOnClickListener {
-            val intent = Intent(this,OutForDeliveryActivity::class.java)
+            val intent = Intent(this, OutForDeliveryActivity::class.java)
             startActivity(intent)
         }
 
         binding.adminProfile.setOnClickListener {
-            val intent = Intent(this,AdminProfileActivity::class.java)
+            val intent = Intent(this, AdminProfileActivity::class.java)
             startActivity(intent)
         }
 
         binding.createNewUser.setOnClickListener {
-            val intent = Intent(this,CreateNewUserActivity::class.java)
+            val intent = Intent(this, CreateNewUserActivity::class.java)
             startActivity(intent)
         }
-         binding.pendingOrderTextView.setOnClickListener {
-                    val intent = Intent(this,PendingOrdersActivity::class.java)
-                    startActivity(intent)
-                }
+        binding.pendingOrderTextView.setOnClickListener {
+            val intent = Intent(this, PendingOrdersActivity::class.java)
+            startActivity(intent)
+        }
 
         binding.logOutButton.setOnClickListener {
-            Toast.makeText(this,"Your Are LoyOut", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Your Are LoyOut", Toast.LENGTH_SHORT).show()
         }
 
     }
