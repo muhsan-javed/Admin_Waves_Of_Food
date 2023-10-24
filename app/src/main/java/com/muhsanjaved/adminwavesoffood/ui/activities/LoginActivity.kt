@@ -18,6 +18,8 @@ import com.muhsanjaved.adminwavesoffood.ui.MainActivity
 
 class LoginActivity : AppCompatActivity() {
 
+    private var userName :String? = null
+    private var nameOfRestaurant :String? = null
     private lateinit var email:String
     private lateinit var password :String
     private lateinit var auth:FirebaseAuth
@@ -62,12 +64,14 @@ class LoginActivity : AppCompatActivity() {
         auth.signInWithEmailAndPassword(email,password).addOnCompleteListener {task ->
             if (task.isSuccessful){
                 val user : FirebaseUser? = auth.currentUser
+                Toast.makeText(this,"Login Successful",Toast.LENGTH_SHORT).show()
                 updateUI(user)
             }
             else{
                 auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener { task->
                     if (task.isSuccessful){
                         val user : FirebaseUser? = auth.currentUser
+                        Toast.makeText(this,"Create User & Login Successful",Toast.LENGTH_SHORT).show()
                         saveUserData()
                         updateUI(user)
                     }
@@ -87,7 +91,7 @@ class LoginActivity : AppCompatActivity() {
         email = binding.editTextLoginTextEmailAddress.text.toString().trim()
         password=binding.editTextLoginTextPassword.text.toString().trim()
 
-        val user  = UserModel(email,password)
+        val user  = UserModel(userName,nameOfRestaurant,email,password)
         val userId:String? = FirebaseAuth.getInstance().currentUser?.uid
         userId?.let {
             database.child("user").child(it).setValue(user)
