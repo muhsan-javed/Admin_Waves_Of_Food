@@ -18,12 +18,12 @@ import com.muhsanjaved.adminwavesoffood.ui.MainActivity
 
 class LoginActivity : AppCompatActivity() {
 
-    private var userName :String? = null
-    private var nameOfRestaurant :String? = null
-    private lateinit var email:String
-    private lateinit var password :String
-    private lateinit var auth:FirebaseAuth
-    private lateinit var database:DatabaseReference
+    private var userName: String? = null
+    private var nameOfRestaurant: String? = null
+    private lateinit var email: String
+    private lateinit var password: String
+    private lateinit var auth: FirebaseAuth
+    private lateinit var database: DatabaseReference
 
     private val binding: ActivityLoginBinding by lazy {
         ActivityLoginBinding.inflate(layoutInflater)
@@ -42,13 +42,12 @@ class LoginActivity : AppCompatActivity() {
         // Login Button
         binding.loginButton.setOnClickListener {
             email = binding.editTextLoginTextEmailAddress.text.toString().trim()
-            password=binding.editTextLoginTextPassword.text.toString().trim()
+            password = binding.editTextLoginTextPassword.text.toString().trim()
 
-            if (email.isBlank() || password.isBlank()){
-                Toast.makeText(this,"Please Fill All Details",Toast.LENGTH_SHORT).show()
-            }
-            else {
-                createUserAccount(email,password)
+            if (email.isBlank() || password.isBlank()) {
+                Toast.makeText(this, "Please Fill All Details", Toast.LENGTH_SHORT).show()
+            } else {
+                createUserAccount(email, password)
             }
 
 //            val intent = Intent(this, SignUpActivity::class.java)
@@ -61,23 +60,22 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun createUserAccount(email: String, password: String) {
-        auth.signInWithEmailAndPassword(email,password).addOnCompleteListener {task ->
-            if (task.isSuccessful){
-                val user : FirebaseUser? = auth.currentUser
-                Toast.makeText(this,"Login Successful",Toast.LENGTH_SHORT).show()
+        auth.signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                val user: FirebaseUser? = auth.currentUser
+                Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
                 updateUI(user)
-            }
-            else{
-                auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener { task->
-                    if (task.isSuccessful){
-                        val user : FirebaseUser? = auth.currentUser
-                        Toast.makeText(this,"Create User & Login Successful",Toast.LENGTH_SHORT).show()
+            } else {
+                auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        val user: FirebaseUser? = auth.currentUser
+                        Toast.makeText(this, "Create User & Login Successful", Toast.LENGTH_SHORT)
+                            .show()
                         saveUserData()
                         updateUI(user)
-                    }
-                    else{
-                        Toast.makeText(this,"Authentication failed",Toast.LENGTH_SHORT).show()
-                        Log.d("Account","CreateUserAccount: Authentication Failed",task.exception)
+                    } else {
+                        Toast.makeText(this, "Authentication failed", Toast.LENGTH_SHORT).show()
+                        Log.d("Account", "CreateUserAccount: Authentication Failed", task.exception)
                     }
                 }
             }
@@ -89,17 +87,17 @@ class LoginActivity : AppCompatActivity() {
 
         // get text form edittext
         email = binding.editTextLoginTextEmailAddress.text.toString().trim()
-        password=binding.editTextLoginTextPassword.text.toString().trim()
+        password = binding.editTextLoginTextPassword.text.toString().trim()
 
-        val user  = UserModel(userName,nameOfRestaurant,email,password)
-        val userId:String? = FirebaseAuth.getInstance().currentUser?.uid
+        val user = UserModel(userName, nameOfRestaurant, email, password)
+        val userId: String? = FirebaseAuth.getInstance().currentUser?.uid
         userId?.let {
             database.child("user").child(it).setValue(user)
         }
     }
 
     private fun updateUI(user: FirebaseUser?) {
-        startActivity(Intent(this,MainActivity::class.java))
+        startActivity(Intent(this, MainActivity::class.java))
         finish()
     }
 }
