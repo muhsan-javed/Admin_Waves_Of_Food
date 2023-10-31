@@ -66,6 +66,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    // Create a new User Account function
     private fun createUserAccount(email: String, password: String) {
         auth.signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
             if (task.isSuccessful) {
