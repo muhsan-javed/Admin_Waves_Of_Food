@@ -36,7 +36,7 @@ class AddItemActivity : AppCompatActivity() {
 
         //Initialize Firebase
         auth = FirebaseAuth.getInstance()
-        // Initialize Firebaase database Instnace
+        // Initialize Firebase database Instance
         database = FirebaseDatabase.getInstance()
 
         // Finish Activity
@@ -78,7 +78,7 @@ class AddItemActivity : AppCompatActivity() {
 
         // get a reference to the "Menu" node in the database
         val menuRef = database.getReference("menu")
-        // Genrate a unqique key for the new menu item
+        // Generate a unique key for the new menu item
         val newItemKey = menuRef.push().key
 
         if (foodImageUri != null){
@@ -90,7 +90,7 @@ class AddItemActivity : AppCompatActivity() {
             uploadTask.addOnSuccessListener {
                 imageRef.downloadUrl.addOnSuccessListener {
                     downloadUrl->
-                    // Create  a new mneu item
+                    // Create  a new menu item
                     val newItem = AllMenu(
                         foodName,
                         foodPrice,
