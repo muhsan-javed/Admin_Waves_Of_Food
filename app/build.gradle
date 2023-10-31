@@ -52,4 +52,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:22.2.0'
     // Firebase realtime Database
     implementation 'com.google.firebase:firebase-database:20.3.0'
+    // glide for Image
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+
 }
