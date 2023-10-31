@@ -48,7 +48,7 @@
     <string name="food_price">Food Price</string>
     <string name="select_image">Select Image</string>
     <string name="short_description">Short Description</string>
-    <string name="lorem_ipsum_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</string>
+    <string name="lorem_ipsum_text">Add Here Description \nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
     <string name="ingredients">Ingredients</string>
     <string name="noddle">Noddle \n Salad \n Burger \n Herbal Pan Cake \n Momos</string>
     <string name="admin_profile">Admin Profile</string>
