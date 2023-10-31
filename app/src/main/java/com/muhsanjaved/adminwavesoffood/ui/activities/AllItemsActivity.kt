@@ -10,7 +10,6 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.muhsanjaved.adminwavesoffood.R
 import com.muhsanjaved.adminwavesoffood.adapters.MenuItemAdapter
 import com.muhsanjaved.adminwavesoffood.databinding.ActivityAllItemsBinding
 import com.muhsanjaved.adminwavesoffood.models.AllMenu
@@ -37,7 +36,7 @@ class AllItemsActivity : AppCompatActivity() {
             finish()
         }
 
-        val foodName =
+        /*val foodName =
             listOf("Burger", "Sandwich", "momo", "Herbal Pancake", "Mixing", "Burger")
         val cartPrice = listOf("$10", "$8", "$15", "$99", "$50", "$12")
         val foodImages = listOf(
@@ -49,10 +48,10 @@ class AllItemsActivity : AppCompatActivity() {
             R.drawable.photo
         )
 
-//        val adapter =
-//            MenuItemAdapter(ArrayList(foodName), ArrayList(cartPrice), ArrayList(foodImages))
-//        binding.allItemRecyclerView.layoutManager = LinearLayoutManager(this)
-//        binding.allItemRecyclerView.adapter = adapter
+        val adapter =
+            MenuItemAdapter(ArrayList(foodName), ArrayList(cartPrice), ArrayList(foodImages))
+        binding.allItemRecyclerView.layoutManager = LinearLayoutManager(this)
+        binding.allItemRecyclerView.adapter = adapter*/
     }
 
     private fun retrieveMenuItem() {
@@ -62,7 +61,7 @@ class AllItemsActivity : AppCompatActivity() {
         // fetch data from data base
         foodRef.addListenerForSingleValueEvent(object :ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                // clear exitiing data before papulating
+                // clear exiting data before populating
                 menuItems.clear()
 
                 // loop for through each food item
@@ -90,3 +89,5 @@ class AllItemsActivity : AppCompatActivity() {
         binding.allItemRecyclerView.adapter = adapter
     }
 }
+
+// 21 Video Completed
