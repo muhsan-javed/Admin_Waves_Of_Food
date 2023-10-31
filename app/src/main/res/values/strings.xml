@@ -62,4 +62,6 @@
     <string name="_123456789">123456789</string>
     <string name="pass">*********</string>
     <string name="save_information">Save Information</string>
+
+    <string name="default_web_client_id" translatable="false">732386522808-1umop6dsudtos1ufn45mfn2cqp3ma550.apps.googleusercontent.com</string>
 </resources>
