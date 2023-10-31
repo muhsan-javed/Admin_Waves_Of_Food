@@ -18,13 +18,15 @@ import com.muhsanjaved.adminwavesoffood.models.UserModel
 
 class SignUpActivity : AppCompatActivity() {
 
-    private lateinit var auth: FirebaseAuth
     private lateinit var email: String
     private lateinit var password: String
     private lateinit var userName: String
     private lateinit var nameOfRestaurant: String
+    // Firebase var
     private lateinit var database: DatabaseReference
+    private lateinit var auth: FirebaseAuth
 
+    // binding with Activity
     private val binding: ActivitySignUpBinding by lazy {
         ActivitySignUpBinding.inflate(layoutInflater)
     }
@@ -45,13 +47,15 @@ class SignUpActivity : AppCompatActivity() {
         val autoCompleteTextView = binding.listOfLocation
         autoCompleteTextView.setAdapter(adapter)
 
+        // Goto LoginActivity
         binding.textViewAlreadyHaveAccount.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
 
+        // Signup Button Code and Sign with UserName, Name Of Restaurant, Email & Password Using With FirebaseAuth
         binding.signUpButton.setOnClickListener {
-
+            // Get Text form EditText
             userName = binding.editTextSignUpTextName.text.toString().trim()
             nameOfRestaurant = binding.editTextSignUpNameOfRestaurant.text.toString().trim()
             email = binding.editTextSignUpTextEmailAddress.text.toString().trim()
@@ -59,16 +63,16 @@ class SignUpActivity : AppCompatActivity() {
 
             if (userName.isBlank() || nameOfRestaurant.isBlank() || email.isBlank() || password.isBlank()) {
                 Toast.makeText(this, "Please fill All Details", Toast.LENGTH_LONG).show()
-            } else {
+            }
+            else {
+                // Create new Account
                 createAccount(email, password)
             }
-
-//            val intent = Intent(this, MainActivity::class.java)
-//            startActivity(intent)
         }
 
     }
 
+    // Create new Account function with Firebase Auth
     private fun createAccount(email: String, password: String) {
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
             if (task.isSuccessful) {
@@ -85,7 +89,7 @@ class SignUpActivity : AppCompatActivity() {
         }
     }
 
-    // Save data into Database
+    // Save data into Firebase RealTime Database DB
     private fun saveUserData() {
         // get Text form EditText
         userName = binding.editTextSignUpTextName.text.toString().trim()
