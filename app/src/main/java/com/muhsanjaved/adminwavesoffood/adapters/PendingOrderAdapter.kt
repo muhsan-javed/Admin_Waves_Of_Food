@@ -1,17 +1,21 @@
 package com.muhsanjaved.adminwavesoffood.adapters
 
 import android.content.Context
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.muhsanjaved.adminwavesoffood.databinding.ItemPendingOrderBinding
 
 class PendingOrderAdapter(
-    private val customerNames: ArrayList<String>,
-    private val quantity: ArrayList<String>,
-    private val foodImages: ArrayList<Int>,
-    private val context: Context
+    private val context: Context,
+    private val customerNames: MutableList<String>,
+    private val quantity: MutableList<String>,
+    private val foodImages: MutableList<String>,
+//    private val itemClicked: OnItemClick
+
 ) : RecyclerView.Adapter<PendingOrderAdapter.PendingOrderViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PendingOrderViewHolder {
@@ -32,7 +36,12 @@ class PendingOrderAdapter(
         fun bind(position: Int) {
             binding.itemPendingOrderCustomerName.text = customerNames[position]
             binding.itemPendingOrderQuantity.text = quantity[position]
-            binding.itemPendingOrderImageView.setImageResource(foodImages[position])
+
+            var uriString = foodImages[position]
+            var uri = Uri.parse(uriString)
+
+            Glide.with(context).load(foodImages[position]).into(binding.itemPendingOrderImageView)
+//            binding.itemPendingOrderImageView.setImageResource(foodImages[position])
 
             binding.itemPendingOrderAcceptButton.apply {
                 if (!isAccepted) {
