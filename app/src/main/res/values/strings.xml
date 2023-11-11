@@ -64,4 +64,5 @@
     <string name="save_information">Save Information</string>
 
     <string name="default_web_client_id" translatable="false">732386522808-1umop6dsudtos1ufn45mfn2cqp3ma550.apps.googleusercontent.com</string>
+    <string name="image_desc_text">Description Image\n</string>
 </resources>
