@@ -2,8 +2,9 @@ package com.muhsanjaved.adminwavesoffood.models
 
 import android.os.Parcel
 import android.os.Parcelable
+import java.io.Serializable
 
-class OrderDetails: Parcelable {
+class OrderDetails: Serializable {
 
     var userUid:String? = null
     var userName:String? = null
@@ -34,11 +35,11 @@ class OrderDetails: Parcelable {
 
     constructor()
 
-    override fun describeContents(): Int {
+    fun describeContents(): Int {
         TODO("Not yet implemented")
     }
 
-    override fun writeToParcel(dest: Parcel, flags: Int) {
+    fun writeToParcel(dest: Parcel, flags: Int) {
         TODO("Not yet implemented")
     }
 
