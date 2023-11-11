@@ -1,5 +1,6 @@
 package com.muhsanjaved.adminwavesoffood.ui.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,13 +14,13 @@ import com.muhsanjaved.adminwavesoffood.adapters.PendingOrderAdapter
 import com.muhsanjaved.adminwavesoffood.databinding.ActivityPendingOrdersBinding
 import com.muhsanjaved.adminwavesoffood.models.OrderDetails
 
-class PendingOrdersActivity : AppCompatActivity() {
+class PendingOrdersActivity : AppCompatActivity() , PendingOrderAdapter.OnItemClicked{
 
     private lateinit var binding: ActivityPendingOrdersBinding
     private var listOfName : MutableList<String> = mutableListOf()
     private var listOfTotalPrice : MutableList<String> = mutableListOf()
     private var listOfImageFirstFoodOrder : MutableList<String> = mutableListOf()
-    private var listOfOrderItem : MutableList<OrderDetails> = mutableListOf()
+    private var listOfOrderItem : ArrayList<OrderDetails> = arrayListOf()
     private lateinit var database: FirebaseDatabase
     private lateinit var databaseOrderDetail: DatabaseReference
 
@@ -82,7 +83,14 @@ class PendingOrdersActivity : AppCompatActivity() {
 
     private fun setAdapter() {
         binding.pendingOrderRecyclerView.layoutManager = LinearLayoutManager(this)
-        val adapter = PendingOrderAdapter(this,listOfName,listOfTotalPrice,listOfImageFirstFoodOrder)
+        val adapter = PendingOrderAdapter(this,listOfName,listOfTotalPrice,listOfImageFirstFoodOrder, this)
         binding.pendingOrderRecyclerView.adapter = adapter
+    }
+
+    override fun onItemClickListener(position: Int) {
+        val intent = Intent(this, OrderDetailsActivity::class.java)
+        val userOrderDetails = listOfOrderItem[position]
+        intent.putExtra("UserOrderDetails",userOrderDetails)
+        startActivity(intent)
     }
 }
