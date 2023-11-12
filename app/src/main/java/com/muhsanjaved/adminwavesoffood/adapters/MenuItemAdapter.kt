@@ -16,9 +16,15 @@ class MenuItemAdapter(
 //    private val MenuItemImage: ArrayList<Int>,
     private val context: Context,
     private val menuList: ArrayList<AllMenu>,
-    databaseReference: DatabaseReference
+    databaseReference: DatabaseReference,
+    private val onItemClickedListener: OnItemClicked
 
 ) : RecyclerView.Adapter<MenuItemAdapter.AllItemViewHolder>() {
+
+    interface OnItemClicked {
+        fun onItemDeleteClicked(position: Int)
+
+    }
 
     private val itemQuantities = IntArray(menuList.size) { 1 }
 
@@ -56,10 +62,11 @@ class MenuItemAdapter(
                     increaseQuantity(position)
                 }
                 deleteImageButton.setOnClickListener {
-                    val itemPosition = adapterPosition
-                    if (itemPosition != RecyclerView.NO_POSITION) {
-                        deleteItem(itemPosition)
-                    }
+//                    val itemPosition = adapterPosition
+//                    if (itemPosition != RecyclerView.NO_POSITION) {
+//                        deleteItem(itemPosition)
+//                    }
+                    onItemClickedListener.onItemDeleteClicked(position)
                 }
             }
         }
@@ -78,14 +85,14 @@ class MenuItemAdapter(
             }
         }
 
-        private fun deleteItem(position: Int) {
+       /* private fun deleteItem(position: Int) {
             menuList.removeAt(position)
             menuList.removeAt(position)
             menuList.removeAt(position)
             notifyItemRemoved(position)
             notifyItemRangeChanged(position, menuList.size)
 
-        }
+        }*/
 
     }
 }
