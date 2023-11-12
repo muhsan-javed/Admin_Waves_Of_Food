@@ -20,6 +20,7 @@ import com.muhsanjaved.adminwavesoffood.ui.activities.AllItemsActivity
 import com.muhsanjaved.adminwavesoffood.ui.activities.CreateNewUserActivity
 import com.muhsanjaved.adminwavesoffood.ui.activities.OutForDeliveryActivity
 import com.muhsanjaved.adminwavesoffood.ui.activities.PendingOrdersActivity
+import com.muhsanjaved.adminwavesoffood.ui.activities.SignUpActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -66,8 +67,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.logOutButton.setOnClickListener {
-            Toast.makeText(this, "Your Are LoyOut", Toast.LENGTH_SHORT).show()
-            Firebase.auth.signOut()
+//            Toast.makeText(this, "Your Are LoyOut", Toast.LENGTH_SHORT).show()
+            auth.signOut()
+            startActivity(Intent(this,SignUpActivity::class.java))
+            finish()
         }
 
         pendingOrders()
