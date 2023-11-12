@@ -3,7 +3,7 @@
     <string name="waves_of_food">Waves Of Food</string>
     <string name="add_item">Add Item</string>
     <string name="password">Password</string>
-    <string name="email">Email Or Phone Number</string>
+    <string name="email">Email </string>
     <string name="full_name">Full-OF Owner</string>
     <string name="create_new_user">Create New User</string>
     <string name="create_new_user_admin">Create New User Admin</string>
