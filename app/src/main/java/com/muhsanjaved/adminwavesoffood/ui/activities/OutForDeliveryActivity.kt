@@ -47,12 +47,11 @@ class OutForDeliveryActivity : AppCompatActivity() {
     private fun retrieveCompleteOrderDetails() {
         // Initializae Firebase db
         database = FirebaseDatabase.getInstance()
-        val completeOrderReferencer = database.reference.child("CompleteOrder")
-            .orderByChild("currentTime")
+        val completeOrderReferencer = database.reference.child("CompletedOrder").orderByChild("currentTime")
         completeOrderReferencer.addListenerForSingleValueEvent(object:ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
-                    listOfCompleteOrderList.clear()
-                    // clear the list before pupulating it with new data
+                    // clear the list before populating it with new data
+                    //listOfCompleteOrderList.clear()
 
                     for (orderSnapshot in snapshot.children){
 
