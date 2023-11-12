@@ -3,6 +3,7 @@ package com.muhsanjaved.adminwavesoffood.ui.activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -10,6 +11,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.muhsanjaved.adminwavesoffood.databinding.ActivityAdminProfileBinding
+import com.muhsanjaved.adminwavesoffood.models.UserModel
 
 class AdminProfileActivity : AppCompatActivity() {
 
@@ -36,7 +38,9 @@ class AdminProfileActivity : AppCompatActivity() {
         binding.adminPassword.isEnabled = false
         binding.adminInformationSaveButton.isEnabled = false
 
-
+        binding.adminInformationSaveButton.setOnClickListener {
+            updateUserData()
+        }
         binding.adminBackButton.setOnClickListener {
             finish()
         }
@@ -53,6 +57,7 @@ class AdminProfileActivity : AppCompatActivity() {
             if (isEnable) {
                 binding.adminName.requestFocus()
             }
+            binding.adminInformationSaveButton.isEnabled = isEnable
         }
 
         retrieveUserData()
@@ -73,10 +78,7 @@ class AdminProfileActivity : AppCompatActivity() {
                         var phone = snapshot.child("phone").getValue()
                         setDataToTextView(ownerName,email,password,address,phone)
                         /*Log.d("TAG","onDataChange: $ownerName")
-                        Log.d("TAG","onDataChange: $email")
-                        Log.d("TAG","onDataChange: $address")
-                        Log.d("TAG","onDataChange: $password")
-                        Log.d("TAG","onDataChange: $phone")*/
+           */
                     }
                 }
 
@@ -102,5 +104,37 @@ class AdminProfileActivity : AppCompatActivity() {
         binding.adminPassword.setText(password.toString())
         binding.adminAddress.setText(address.toString())
         binding.adminPhoneNumber.setText(phone.toString())
+    }
+
+    private fun updateUserData() {
+        val updateName = binding.adminName.text.toString()
+        val updateEmail = binding.adminEmail.text.toString()
+        val updatePassword = binding.adminPassword.text.toString()
+        val updateAddress =binding.adminAddress.text.toString()
+        val updatePhone= binding.adminPhoneNumber.text.toString()
+
+        val currentUserUid = auth.currentUser?.uid
+
+        if (currentUserUid != null){
+
+            val userReferencer = adminReferencer.child(currentUserUid)
+            userReferencer.child("name").setValue(updateName)
+            userReferencer.child("email").setValue(updateEmail)
+            userReferencer.child("password").setValue(updatePassword)
+            userReferencer.child("address").setValue(updateAddress)
+            userReferencer.child("phone").setValue(updatePhone)
+
+//        var userData = UserModel(updateName,updateEmail, updatePassword,updateAddress,updatePhone)
+//        adminReferencer.setValue(userData).addOnSuccessListener {
+
+            Toast.makeText(this,"Profile Update SuccessFull 🥰",Toast.LENGTH_SHORT).show()
+            // update the email and password for firebase Authentication
+            auth.currentUser?.updateEmail(updateEmail)
+            auth.currentUser?.updatePassword(updatePassword)
+
+        }
+        else {
+            Toast.makeText(this,"Profile Update Fail 😒",Toast.LENGTH_SHORT).show()
+        }
     }
 }
