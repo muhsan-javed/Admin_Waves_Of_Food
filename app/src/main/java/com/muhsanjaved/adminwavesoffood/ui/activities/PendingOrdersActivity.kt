@@ -120,6 +120,8 @@ class PendingOrdersActivity : AppCompatActivity() , PendingOrderAdapter.OnItemCl
         dispatchItemOrderReferencer.setValue(listOfOrderItem[position])
             .addOnSuccessListener {
                 deleteThisItemFromOrderDetails(dispatchItemPushKey)
+            }.addOnFailureListener {
+                Toast.makeText(this,"Dispatch Not Error",Toast.LENGTH_SHORT).show()
             }
     }
 
