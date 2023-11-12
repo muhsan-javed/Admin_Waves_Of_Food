@@ -14,7 +14,7 @@ import com.muhsanjaved.adminwavesoffood.adapters.MenuItemAdapter
 import com.muhsanjaved.adminwavesoffood.databinding.ActivityAllItemsBinding
 import com.muhsanjaved.adminwavesoffood.models.AllMenu
 
-class AllItemsActivity : AppCompatActivity() {
+class AllItemsActivity : AppCompatActivity(), MenuItemAdapter.OnItemClicked {
 
     private lateinit var databaseReference: DatabaseReference
     private lateinit var database: FirebaseDatabase
@@ -84,9 +84,24 @@ class AllItemsActivity : AppCompatActivity() {
     }
 
     private fun setAdapter() {
-        val adapter = MenuItemAdapter(this@AllItemsActivity, menuItems,databaseReference)
+        val adapter = MenuItemAdapter(this@AllItemsActivity, menuItems,databaseReference,this)
         binding.allItemRecyclerView.layoutManager = LinearLayoutManager(this)
         binding.allItemRecyclerView.adapter = adapter
+    }
+
+    override fun onItemDeleteClicked(position: Int) {
+        val menuItemToDelete = menuItems[position]
+        val menuItemKey = menuItemToDelete.key
+        val foodMenuReference = database.reference.child("menu").child(menuItemKey!!)
+        foodMenuReference.removeValue().addOnCompleteListener {
+            task->
+            if (task.isSuccessful){
+                menuItems.removeAt(position)
+                binding.allItemRecyclerView.adapter?.notifyItemRemoved(position)
+            }else{
+                Toast.makeText(this,"Item NOt Deleted",Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }
 
