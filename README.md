@@ -1,4 +1,4 @@
- # Admin Waves Of Food Application
+# Admin Waves Of Food Application
 
 Food Ordering App with Admin App Firebase
 
