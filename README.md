@@ -1,5 +1,5 @@
 # Admin Waves Of Food Application
-
+ 
 Food Ordering App with Admin App Firebase
 
 Used Firebase to store restaurant data, Applied MVC pattern design style for client side & server side.
