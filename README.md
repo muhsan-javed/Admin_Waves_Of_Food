@@ -1,4 +1,7 @@
-# Admin Waves Of Food Application
+<h1 align="center">
+  Admin Waves Of Food Application
+</h1>
+
  
 Food Ordering App with Admin App Firebase...
 
