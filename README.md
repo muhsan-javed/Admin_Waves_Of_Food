@@ -1,4 +1,3 @@
-
 <h1 align="center">
   Admin Waves Of Food Application
 </h1>
