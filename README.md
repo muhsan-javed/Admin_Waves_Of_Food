@@ -1,7 +1,7 @@
  <h1 align="center">
   Admin Waves Of Food Application
 </h1>  
- 
+  
  Food Ordering App with Admin App Firebase...
 
 Used Firebase to store restaurant data, Applied MVC pattern design style for client side & server side.
