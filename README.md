@@ -11,7 +11,7 @@ Used Firebase to store restaurant data, Applied MVC pattern design style for cli
 - As I am a android learner myself, all help & contribution is very well appreciated. If you find this idea or the underlying code useful, feel free to reuse it in your own projects.
   
 - User App Link: 🔗 https://github.com/muhsan-javed/Waves_Of_Food
-  
+ 
 # Screenshot
 
 <div style="display: flex; flex-direction: row;">
